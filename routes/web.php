@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::domain('telhasimperio.grupomarkat.com')->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
+});
+
