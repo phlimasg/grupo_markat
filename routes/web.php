@@ -11,12 +11,16 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
-Route::domain('telhasimperio.grupomarkat.com')->group(function () {
+Route::domain('telhasimperio.grupomarkat.com')->group(function () {*/
     Route::get('/', function () {
-        return view('welcome');
+        return view('imperio.index');
     });
-});
+//});
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
