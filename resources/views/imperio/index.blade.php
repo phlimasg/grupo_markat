@@ -46,7 +46,7 @@
     <div class="carousel-inner">
 
       <div class="item active">
-        <img src="https://cdn.pixabay.com/photo/2017/10/05/06/46/asia-2818564_960_720.jpg" alt="Los Angeles" style="width:100%;">
+        <img src="https://cdn.pixabay.com/photo/2017/10/05/06/46/asia-2818564_960_720.jpg" alt="Los Angeles" class="img-slide">
         <div class="carousel-caption">
           <h3>Los Angeles</h3>
           <p>LA is always so much fun!</p>
@@ -54,7 +54,7 @@
       </div>
 
       <div class="item">
-        <img src="https://cdn.pixabay.com/photo/2017/10/05/06/46/asia-2818566_960_720.jpg" alt="Chicago" style="width:100%;">
+        <img src="https://cdn.pixabay.com/photo/2017/10/05/06/46/asia-2818566_960_720.jpg" alt="Chicago" class="img-slide">
         <div class="carousel-caption">
           <h3>Chicago</h3>
           <p>Thank you, Chicago!</p>

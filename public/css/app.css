@@ -22,3 +22,6 @@ body{
       max-width: 250px; 
       padding: 15px;     
   }
+  .img-slide{      
+      max-height: 500px;
+  }
