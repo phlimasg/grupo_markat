@@ -4,7 +4,7 @@
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="img/fav.png">
+    <link rel="shortcut icon" href="public/img/fav.png">
     <!-- Author Meta -->
     <meta name="author" content="codepixer">
     <!-- Meta Description -->
@@ -20,22 +20,22 @@
         <!--
         CSS
         ============================================= -->
-        <link rel="stylesheet" href="css/linearicons.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
-        <link rel="stylesheet" href="css/nice-select.css">	
-        <link rel="stylesheet" href="css/hexagons.min.css">							
-        <link rel="stylesheet" href="css/animate.min.css">
-        <link rel="stylesheet" href="css/owl.carousel.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="{{ url('public/css/linearicons.css') }}">
+        <link rel="stylesheet" href="{{ url('public/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="public/css/bootstrap.css">
+        <link rel="stylesheet" href="public/css/magnific-popup.css">
+        <link rel="stylesheet" href="public/css/nice-select.css">	
+        <link rel="stylesheet" href="public/css/hexagons.min.css">							
+        <link rel="stylesheet" href="public/css/animate.min.css">
+        <link rel="stylesheet" href="public/css/owl.carousel.css">
+        <link rel="stylesheet" href="public/css/main.css">
     </head>
     <body>
             <header id="header" id="home">
                     <div class="container main-menu">
                         <div class="row align-items-center justify-content-between d-flex">
                           <div id="logo">
-                            <a href="index.html"><img src="img/imperio/logo.png" alt="" title="" /></a>
+                            <a href="index.html"><img src="public/img/imperio/logo.png" alt="" title="" /></a>
                           </div>
                           <nav id="nav-menu-container">
                             <ul class="nav-menu">
@@ -101,21 +101,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </footer>	
         <!-- End footer Area -->	
 
-        <script src="js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="public/js/vendor/jquery-2.2.4.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="js/vendor/bootstrap.min.js"></script>			
+        <script src="public/js/vendor/bootstrap.min.js"></script>			
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-          <script src="js/easing.min.js"></script>			
-        <script src="js/hoverIntent.js"></script>
-        <script src="js/superfish.min.js"></script>	
-        <script src="js/jquery.ajaxchimp.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>	
-        <script src="js/owl.carousel.min.js"></script>	
-        <script src="js/hexagons.min.js"></script>							
-        <script src="js/jquery.nice-select.min.js"></script>	
-        <script src="js/jquery.counterup.min.js"></script>
-        <script src="js/waypoints.min.js"></script>							
-        <script src="js/mail-script.js"></script>	
-        <script src="js/main.js"></script>	
+          <script src="public/js/easing.min.js"></script>			
+        <script src="public/js/hoverIntent.js"></script>
+        <script src="public/js/superfish.min.js"></script>	
+        <script src="public/js/jquery.ajaxchimp.min.js"></script>
+        <script src="public/js/jquery.magnific-popup.min.js"></script>	
+        <script src="public/js/owl.carousel.min.js"></script>	
+        <script src="public/js/hexagons.min.js"></script>							
+        <script src="public/js/jquery.nice-select.min.js"></script>	
+        <script src="public/js/jquery.counterup.min.js"></script>
+        <script src="public/js/waypoints.min.js"></script>							
+        <script src="public/js/mail-script.js"></script>	
+        <script src="public/js/main.js"></script>	
     </body>
 </html>
