@@ -106,7 +106,7 @@
         <div class="col-lg-4">
             <div class="single-service text-justify">
                 <div class="thumb">
-                <img src="{{asset('img\imperio\telha_site.jpg')}}" alt="">									
+                <img src="{{asset('public\img\imperio\telha_site.jpg')}}" alt="">									
                 </div>
                 <h4>Telhas Termoacústicas</h4>
                 <p>
@@ -117,7 +117,7 @@
         <div class="col-lg-4">
             <div class="single-service">
                 <div class="thumb">
-                    <img src="img/s2.jpg" alt="">									
+                    <img src="public/img/s2.jpg" alt="">									
                 </div>
                 <h4>Construction & Engineering</h4>
                 <p>
@@ -128,7 +128,7 @@
         <div class="col-lg-4">
             <div class="single-service">
                 <div class="thumb">
-                    <img src="img/s3.jpg" alt="">									
+                    <img src="public/img/s3.jpg" alt="">									
                 </div>
                 <h4>Industrial Engineering</h4>
                 <p>
@@ -141,7 +141,7 @@
         <div class="col-lg-4">
             <div class="single-service text-justify">
                 <div class="thumb">
-                <img src="{{asset('img\imperio\telha_site.jpg')}}" alt="">									
+                <img src="{{asset('public\img\imperio\telha_site.jpg')}}" alt="">									
                 </div>
                 <h4>Telhas Termoacústicas</h4>
                 <p>
@@ -152,7 +152,7 @@
         <div class="col-lg-4">
             <div class="single-service">
                 <div class="thumb">
-                    <img src="img/s2.jpg" alt="">									
+                    <img src="public/img/s2.jpg" alt="">									
                 </div>
                 <h4>Construction & Engineering</h4>
                 <p>
@@ -163,7 +163,7 @@
         <div class="col-lg-4">
             <div class="single-service">
                 <div class="thumb">
-                    <img src="img/s3.jpg" alt="">									
+                    <img src="public/img/s3.jpg" alt="">									
                 </div>
                 <h4>Industrial Engineering</h4>
                 <p>
@@ -245,23 +245,23 @@
     </div>						
     <div class="row">
         <div class="col-lg-8 col-md-8">
-            <a href="img/p1.jpg" class="img-gal">
-                <img class="img-fluid single-project" src="img/p1.jpg" alt="">
+            <a href="public/img/p1.jpg" class="img-gal">
+                <img class="img-fluid single-project" src="public/img/p1.jpg" alt="">
             </a>	
         </div>
         <div class="col-lg-4 col-md-4">
-            <a href="img/p2.jpg" class="img-gal">
-                <img class="img-fluid single-project" src="img/p2.jpg" alt="">
+            <a href="public/img/p2.jpg" class="img-gal">
+                <img class="img-fluid single-project" src="public/img/p2.jpg" alt="">
             </a>	
         </div>						
         <div class="col-lg-6 col-md-6">
-            <a href="img/p3.jpg" class="img-gal">
-                <img class="img-fluid single-project" src="img/p3.jpg" alt="">
+            <a href="public/img/p3.jpg" class="img-gal">
+                <img class="img-fluid single-project" src="public/img/p3.jpg" alt="">
             </a>	
         </div>
         <div class="col-lg-6 col-md-6">
-            <a href="img/p4.jpg" class="img-gal">
-                <img class="img-fluid single-project" src="img/p4.jpg" alt="">
+            <a href="public/img/p4.jpg" class="img-gal">
+                <img class="img-fluid single-project" src="public/img/p4.jpg" alt="">
             </a>	
         </div>		
     </div>
