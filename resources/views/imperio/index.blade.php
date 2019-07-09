@@ -10,7 +10,7 @@
         <div class="banner-content col-lg-12 col-md-12">
             <h6 class="text-uppercase">As melhores telhas, você encontra aqui!</h6>
             <h1>
-                Nós somos a solução!			
+             O menor preço, pelo melhor produto!			
             </h1>
             <p class="text-white">
                 Especializados em telhas galvalumes, temos o melhor material termoacústico do mercado.
