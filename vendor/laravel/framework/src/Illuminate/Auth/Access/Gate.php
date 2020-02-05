@@ -80,7 +80,7 @@ class Gate implements GateContract
      * @param  array  $policies
      * @param  array  $beforeCallbacks
      * @param  array  $afterCallbacks
-     * @param  callable  $guessPolicyNamesUsingCallback
+     * @param  callable|null  $guessPolicyNamesUsingCallback
      * @return void
      */
     public function __construct(Container $container, callable $userResolver, array $abilities = [],
@@ -150,10 +150,11 @@ class Gate implements GateContract
     public function resource($name, $class, array $abilities = null)
     {
         $abilities = $abilities ?: [
-            'view'   => 'view',
-            'create' => 'create',
-            'update' => 'update',
-            'delete' => 'delete',
+            'viewAny' => 'viewAny',
+            'view'    => 'view',
+            'create'  => 'create',
+            'update'  => 'update',
+            'delete'  => 'delete',
         ];
 
         foreach ($abilities as $ability => $method) {
@@ -296,6 +297,18 @@ class Gate implements GateContract
     }
 
     /**
+     * Determine if all of the given abilities should be denied for the current user.
+     *
+     * @param  iterable|string  $abilities
+     * @param  array|mixed  $arguments
+     * @return bool
+     */
+    public function none($abilities, $arguments = [])
+    {
+        return ! $this->any($abilities, $arguments);
+    }
+
+    /**
      * Determine if the given ability should be granted for the current user.
      *
      * @param  string  $ability
@@ -405,6 +418,8 @@ class Gate implements GateContract
      *
      * @param  callable  $callback
      * @return bool
+     *
+     * @throws \ReflectionException
      */
     protected function callbackAllowsGuests($callback)
     {
@@ -450,14 +465,12 @@ class Gate implements GateContract
      */
     protected function callBeforeCallbacks($user, $ability, array $arguments)
     {
-        $arguments = array_merge([$user, $ability], [$arguments]);
-
         foreach ($this->beforeCallbacks as $before) {
             if (! $this->canBeCalledWithUser($user, $before)) {
                 continue;
             }
 
-            if (! is_null($result = $before(...$arguments))) {
+            if (! is_null($result = $before($user, $ability, $arguments))) {
                 return $result;
             }
         }
@@ -517,7 +530,6 @@ class Gate implements GateContract
         }
 
         return function () {
-            return null;
         };
     }
 
@@ -589,6 +601,8 @@ class Gate implements GateContract
      *
      * @param  object|string  $class
      * @return mixed
+     *
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     public function resolvePolicy($class)
     {
@@ -643,7 +657,7 @@ class Gate implements GateContract
     protected function callPolicyBefore($policy, $user, $ability, $arguments)
     {
         if (! method_exists($policy, 'before')) {
-            return null;
+            return;
         }
 
         if ($this->canBeCalledWithUser($user, $policy, 'before')) {
@@ -670,7 +684,7 @@ class Gate implements GateContract
         }
 
         if (! is_callable([$policy, $method])) {
-            return null;
+            return;
         }
 
         if ($this->canBeCalledWithUser($user, $policy, $method)) {

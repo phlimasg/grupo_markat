@@ -15,6 +15,7 @@
  * - sheriffmarley
  * - dennisoderwald
  * - Timo
+ * - Karag2006
  */
 return [
     'year' => ':count Jahr|:count Jahre',
@@ -36,7 +37,7 @@ return [
     'a_minute' => 'eine Minute|:count Minuten',
     'min' => ':count Min.',
     'second' => ':count Sekunde|:count Sekunden',
-    'a_second' => 'eine Sekunde|:count Sekunden',
+    'a_second' => 'ein paar Sekunden|:count Sekunden',
     's' => ':count Sek.',
     'ago' => 'vor :time',
     'from_now' => 'in :time',
@@ -51,10 +52,18 @@ return [
     'month_ago' => ':count Monat|:count Monaten',
     'week_ago' => ':count Woche|:count Wochen',
     'day_ago' => ':count Tag|:count Tagen',
+    'a_year_from_now' => 'ein Jahr|:count Jahren',
+    'a_month_from_now' => 'ein Monat|:count Monaten',
+    'a_week_from_now' => 'eine Woche|:count Wochen',
+    'a_day_from_now' => 'ein Tag|:count Tagen',
+    'a_year_ago' => 'ein Jahr|:count Jahren',
+    'a_month_ago' => 'ein Monat|:count Monaten',
+    'a_week_ago' => 'eine Woche|:count Wochen',
+    'a_day_ago' => 'ein Tag|:count Tagen',
 
     'diff_now' => 'Gerade eben',
     'diff_yesterday' => 'Gestern',
-    'diff_tomorrow' => 'Heute',
+    'diff_tomorrow' => 'Morgen',
     'diff_before_yesterday' => 'Vorgestern',
     'diff_after_tomorrow' => 'Übermorgen',
 

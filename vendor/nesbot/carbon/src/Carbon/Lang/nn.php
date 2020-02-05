@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-/**
+/*
  * Authors:
  * - François B
  * - Alexander Tømmerås
@@ -58,4 +58,5 @@ return [
     'first_day_of_week' => 1,
     'day_of_first_week_of_year' => 4,
     'list' => [', ', ' og '],
+    'meridiem' => ['f.m.', 'e.m.'],
 ];

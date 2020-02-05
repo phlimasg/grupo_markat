@@ -25,6 +25,7 @@ return [
     'second' => 'ਕੁਝ ਸਕਿੰਟ|:count ਸਕਿੰਟ',
     'ago' => ':time ਪਿਛਲੇ',
     'from_now' => ':time ਵਿੱਚ',
+    'diff_now' => 'ਹੁਣ',
     'diff_yesterday' => 'ਕਲ',
     'diff_tomorrow' => 'ਕਲ',
     'formats' => [
@@ -67,4 +68,5 @@ return [
     'first_day_of_week' => 0,
     'day_of_first_week_of_year' => 1,
     'list' => [', ', ' ਅਤੇ '],
+    'weekend' => [0, 0],
 ];

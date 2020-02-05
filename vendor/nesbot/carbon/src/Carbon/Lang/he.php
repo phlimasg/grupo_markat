@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-/**
+/*
  * Authors:
  * - Daniel Cohen Gindi
  * - JD Isaacks
@@ -36,6 +36,9 @@ return [
     'from_now' => 'בעוד :time מעכשיו',
     'after' => 'אחרי :time',
     'before' => 'לפני :time',
+    'diff_now' => 'עכשיו',
+    'diff_yesterday' => 'אתמול',
+    'diff_tomorrow' => 'מחר',
     'formats' => [
         'LT' => 'HH:mm',
         'LTS' => 'HH:mm:ss',
@@ -74,4 +77,5 @@ return [
     'weekdays_short' => ['א׳', 'ב׳', 'ג׳', 'ד׳', 'ה׳', 'ו׳', 'ש׳'],
     'weekdays_min' => ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'ש'],
     'list' => [', ', ' ו -'],
+    'weekend' => [5, 6],
 ];
