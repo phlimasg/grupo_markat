@@ -15,11 +15,16 @@
     return view('welcome');
 });
 Route::domain('telhasimperio.grupomarkat.com')->group(function () {*/
-    Route::get('/', function () {
+
+
+
+Route::get('/', function () {
         return view('imperio.index');
     });
-    Route::resource('produtos','Imperio\ProdutosController');
-//});
+Route::prefix('admin')->group(function () {
+    Route::resource('produto_imagens','Imperio\ImagensController');
+    Route::resource('produtos','Imperio\ProdutosController');    
+});
 
 
 Auth::routes();

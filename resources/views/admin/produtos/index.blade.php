@@ -7,7 +7,7 @@
         <!-- small box -->
         <div class="small-box bg-aqua">
           <div class="inner">
-            <h3>150</h3>
+            <h3>{{$count_prod}}</h3>
     
             <p>Produtos cadastrados</p>
           </div>
@@ -72,7 +72,7 @@
 
               <div class="input-group-btn">
                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                <a href="" class="btn btn-primary"> <i class="fa fa-plus"></i> Adicionar</a>
+                <a href="{{ route('produtos.create') }}" class="btn btn-primary"> <i class="fa fa-plus"></i> Adicionar</a>
               </div>
             </div>
           </div>
@@ -86,45 +86,25 @@
               <th>Medida</th>
               <th>Quantidade</th>
               <th>Valor</th>
+              <th></th>
             </tr>
+            @forelse ($produtos as $i)
             <tr>
-              <td>183</td>
-              <td>John Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-success">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr>
-              <td>219</td>
-              <td>Alexander Pierce</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-warning">Pending</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr>
-              <td>657</td>
-              <td>Bob Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-primary">Approved</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr>
-              <td>175</td>
-              <td>Mike Doe</td>
-              <td>11-7-2014</td>
-              <td><span class="label label-danger">Denied</span></td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
+              <td>{{$i->id}}</td>
+              <td>{{$i->nome}}</td>
+              <td>{{$i->uni_medida}}</td>
+              <td>{{$i->quantidade}}</td>
+              <td>{{$i->valor}}</td>
+              <th><a href=""><i class="fa fa-eye"></i></a></th>
+            </tr>                
+            @empty
+                Nenhum produto cadastrado
+            @endforelse
+            
           </tbody></table>
         </div>
         <div class="box-footer clearfix">
-            <ul class="pagination pagination-sm no-margin pull-right">
-              <li><a href="#">«</a></li>
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">»</a></li>
-            </ul>
+            {{ $produtos->links() }}
           </div>
         <!-- /.box-body -->
       </div>

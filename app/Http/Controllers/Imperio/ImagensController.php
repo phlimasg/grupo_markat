@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Imperio;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ProdutosRequest;
-use App\Model\imperio\produtos;
+use App\Http\Requests\ProdutoImgRequest;
+use App\Model\imperio\produtos_img;
+use Illuminate\Support\Facades\Storage;
 
-class ProdutosController extends Controller
+class ImagensController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +17,7 @@ class ProdutosController extends Controller
      */
     public function index()
     {
-        $produtos = produtos::paginate(15);
-        $count_prod = produtos::count();
-        return view('admin.produtos.index',compact('produtos','count_prod'));
+        
     }
 
     /**
@@ -28,7 +27,7 @@ class ProdutosController extends Controller
      */
     public function create()
     {
-        return view('admin.produtos.create');
+        //
     }
 
     /**
@@ -37,14 +36,18 @@ class ProdutosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProdutosRequest $request)
-    {
-        try {            
-            $produto = produtos::create($request->except(['token']));
-            return redirect()->route('produto_imagens.show',['id'=>$produto->id]);
-        } catch (\Exception $e) {
-            return $e->getMessage();
-        }
+    public function store(ProdutoImgRequest $request)
+    {     
+        
+        foreach ($request->url as $photo) {            
+            $filename = Storage::putFile('public/produtos/'.$request->produtos_id, $photo);
+            produtos_img::create([
+                'produtos_id' => $request->produtos_id,
+                'url' => str_replace('public/','',$filename) 
+                ]);
+            }
+            return redirect()->back();
+            
     }
 
     /**
@@ -55,7 +58,8 @@ class ProdutosController extends Controller
      */
     public function show($id)
     {
-        //
+        $imagens = produtos_img::where('produtos_id',$id)->get();        
+        return view('admin.produtos.imagens.show', compact('imagens'));
     }
 
     /**
@@ -89,6 +93,11 @@ class ProdutosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produto_img = produtos_img::where('id',$id)->first();
+        if(Storage::delete('public/'.$produto_img->url) == true){
+            $produto_img->delete();
+        }
+        return redirect()->back();
+        
     }
 }
