@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Produtos')
 @section('content')
+@error('url')
+<div class="text-danger">*{{ $message }}</div>
+@enderror
 <div class="box box-primary">
   <div class="box-header">
     <h3 class="box-title">Imagens do produto</h3>
@@ -53,7 +56,7 @@
   <div class="modal-dialog">
     <form action="{{ route('produto_imagens.store') }}" method="post" enctype="multipart/form-data">
       @csrf
-      <input type="hidden" name="produtos_id" value="1">
+      <input type="hidden" name="produtos_id" value="{{$id}}">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">

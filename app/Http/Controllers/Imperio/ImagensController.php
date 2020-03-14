@@ -39,14 +39,18 @@ class ImagensController extends Controller
     public function store(ProdutoImgRequest $request)
     {     
         
-        foreach ($request->url as $photo) {            
-            $filename = Storage::putFile('public/produtos/'.$request->produtos_id, $photo);
-            produtos_img::create([
-                'produtos_id' => $request->produtos_id,
-                'url' => str_replace('public/','',$filename) 
-                ]);
-            }
-            return redirect()->back();
+        try {            
+            foreach ($request->url as $photo) {            
+                $filename = Storage::putFile('public/produtos/'.$request->produtos_id, $photo);
+                produtos_img::create([
+                    'produtos_id' => $request->produtos_id,
+                    'url' => str_replace('public/','',$filename) 
+                    ]);
+                }
+                return redirect()->back();
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
             
     }
 
@@ -58,8 +62,8 @@ class ImagensController extends Controller
      */
     public function show($id)
     {
-        $imagens = produtos_img::where('produtos_id',$id)->get();        
-        return view('admin.produtos.imagens.show', compact('imagens'));
+        $imagens = produtos_img::where('produtos_id',$id)->get();
+        return view('admin.produtos.imagens.show', compact('imagens','id'));
     }
 
     /**

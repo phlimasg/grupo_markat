@@ -36,9 +36,9 @@
         </div>
         <div class="col-sm-2">
           <label for="">Valor</label>
-          <input type="text" name="valor" id="" class="form-control">
+          <input type="text" name="valor" id="" class="form-control" data-mask="#.###0,00" data-mask-reverse="true">
           @error('valor')
-              <div class="text-danger">*{{ $message }}</div>
+              <div class="text-danger" >*{{ $message }}</div>
           @enderror
         </div>
       </div>
@@ -75,5 +75,6 @@
     CKEDITOR.replace('editor', options);
     $('#lfm').filemanager('image', {prefix: "{{route('unisharp.lfm.show',['type'=>'Images','token'=>csrf_token()])}}"});    
 </script>
+<script src="{{ asset('js/jquery.mask.min.js') }}"></script>
     
 @endsection

@@ -114,7 +114,7 @@ return [
 
     'login_url' => 'login',
 
-    'register_url' => null,
+    'register_url' => 'register',
 
     /*
     |--------------------------------------------------------------------------
