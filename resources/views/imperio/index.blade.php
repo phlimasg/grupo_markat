@@ -15,12 +15,145 @@
             <p class="text-white">
                 Especializados em telhas galvalumes, temos o melhor material termoacústico do mercado.
             </p>
-            <a href="#" class="primary-btn header-btn text-uppercase">Faça seu orçamento</a>
+            <a href="#products" class="primary-btn header-btn text-uppercase">Faça seu orçamento agora!</a>
         </div>												
     </div>
 </div>
 </section>
 <!-- End banner Area -->
+
+
+<!-- Start service Area -->
+<section class="service-area section-gap" id="products">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-12 pb-30 header-text text-center">
+                <h1 class="mb-10">Nossos produtos</h1>
+                <p>
+                    Trabalhamos com os melhores produtos pra você!
+                </p>
+            </div>
+        </div> 
+        <div class="row">
+            @php($cont = 0)
+            @forelse ($produtos as $produto)
+                @if (!empty($produto->imagem))                    
+                    <div class="col-md-2 text-center" style="background-color: rgb(245, 245, 245); padding: 5px; border: 2px solid white">
+                        <a href="#" class="single-service" style="color: inherit">
+                            <div id="{{$produto->id}}" class="owl-carousel owl-theme">
+                                <!-- Wrapper for slides -->
+                                @foreach ($produto->imagem as $imagem)
+                                      <div class="item">
+                                        <img src="{{url('/public/storage').'/'.$imagem->url}}" alt="" style="max-height: 300px">
+                                      </div>  
+                                @endforeach
+                            </div> 
+                            <h4>{{$produto->nome}}</h4>
+                            <div class="descricao">
+                                <p>
+                                    {{Strip_tags(mb_strimwidth($produto->descricao,0,25,'...'))}}
+                                </p>
+
+                            </div>
+                        </a>                        
+                        @if (Cookie::get('email'))
+                            <button type="submit" class="primary-btn orcamento-btn text-uppercase"> <span class="lnr lnr-cart"></span> Adicionar</button>
+                        @else
+                            <a href="{{ route('cadastro') }}" class="orcamento-btn primary-btn text-uppercase btn-block"><span class="lnr lnr-cart"></span> Adicionar</a>                            
+                        @endif
+
+                    </div>
+                    @php($cont++)
+                    @if ($cont == 6)
+                        </div>
+                        <div class="row">
+                        @php($cont=0)
+                    @endif
+                @else  
+                Nenhuma imagem para exibir 
+                @endif
+            @empty
+                Nenhum produto cadastrado
+            @endforelse						
+            
+        </div>  
+        <!--    
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="single-service text-justify">
+                    <div class="thumb">
+                    <img src="{{asset('public\img\imperio\telha_site.jpg')}}" alt="">									
+                    </div>
+                    <h4>Telhas Termoacústicas</h4>
+                    <p>
+                        Composta por duas telhas trapezoidais formando um “sanduíche” com o núcleo em poliestireno (isopor) ou poliuretano, que se expandem e aderem perfeitamente ao aço, criando um produto novo, dotado de grande rigidez, de alta resistência térmica e de grande isolamento a ruídos externos.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-service">
+                    <div class="thumb">
+                        <img src="public/img/s2.jpg" alt="">									
+                    </div>
+                    <h4>Construction & Engineering</h4>
+                    <p>
+                        inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-service">
+                    <div class="thumb">
+                        <img src="public/img/s3.jpg" alt="">									
+                    </div>
+                    <h4>Industrial Engineering</h4>
+                    <p>
+                        inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.
+                    </p>
+                </div>
+            </div>												
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="single-service text-justify">
+                    <div class="thumb">
+                    <img src="{{asset('public\img\imperio\telha_site.jpg')}}" alt="">									
+                    </div>
+                    <h4>Telhas Termoacústicas</h4>
+                    <p>
+                        Composta por duas telhas trapezoidais formando um “sanduíche” com o núcleo em poliestireno (isopor) ou poliuretano, que se expandem e aderem perfeitamente ao aço, criando um produto novo, dotado de grande rigidez, de alta resistência térmica e de grande isolamento a ruídos externos.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-service">
+                    <div class="thumb">
+                        <img src="public/img/s2.jpg" alt="">									
+                    </div>
+                    <h4>Construction & Engineering</h4>
+                    <p>
+                        inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-service">
+                    <div class="thumb">
+                        <img src="public/img/s3.jpg" alt="">									
+                    </div>
+                    <h4>Industrial Engineering</h4>
+                    <p>
+                        inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.
+                    </p>
+                </div>
+            </div>												
+        </div>
+    -->
+    {{ $produtos->links() }}
+    </div>	
+    </section>
+    <!-- End service Area -->
+
 
 <!-- Start cat Area -->
 <section class="cat-area section-gap" id="feature">
@@ -208,90 +341,7 @@
 <!-- End home-about Area -->
     
 
-<!-- Start service Area -->
-<section class="service-area section-gap" id="products">
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12 pb-30 header-text text-center">
-            <h1 class="mb-10">Nossos produtos</h1>
-            <p>
-                Trabalhamos com os melhores produtos pra você!
-            </p>
-        </div>
-    </div>						
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="single-service text-justify">
-                <div class="thumb">
-                <img src="{{asset('public\img\imperio\telha_site.jpg')}}" alt="">									
-                </div>
-                <h4>Telhas Termoacústicas</h4>
-                <p>
-                    Composta por duas telhas trapezoidais formando um “sanduíche” com o núcleo em poliestireno (isopor) ou poliuretano, que se expandem e aderem perfeitamente ao aço, criando um produto novo, dotado de grande rigidez, de alta resistência térmica e de grande isolamento a ruídos externos.
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="single-service">
-                <div class="thumb">
-                    <img src="public/img/s2.jpg" alt="">									
-                </div>
-                <h4>Construction & Engineering</h4>
-                <p>
-                    inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="single-service">
-                <div class="thumb">
-                    <img src="public/img/s3.jpg" alt="">									
-                </div>
-                <h4>Industrial Engineering</h4>
-                <p>
-                    inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.
-                </p>
-            </div>
-        </div>												
-    </div>
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="single-service text-justify">
-                <div class="thumb">
-                <img src="{{asset('public\img\imperio\telha_site.jpg')}}" alt="">									
-                </div>
-                <h4>Telhas Termoacústicas</h4>
-                <p>
-                    Composta por duas telhas trapezoidais formando um “sanduíche” com o núcleo em poliestireno (isopor) ou poliuretano, que se expandem e aderem perfeitamente ao aço, criando um produto novo, dotado de grande rigidez, de alta resistência térmica e de grande isolamento a ruídos externos.
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="single-service">
-                <div class="thumb">
-                    <img src="public/img/s2.jpg" alt="">									
-                </div>
-                <h4>Construction & Engineering</h4>
-                <p>
-                    inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.
-                </p>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="single-service">
-                <div class="thumb">
-                    <img src="public/img/s3.jpg" alt="">									
-                </div>
-                <h4>Industrial Engineering</h4>
-                <p>
-                    inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.
-                </p>
-            </div>
-        </div>												
-    </div>
-</div>	
-</section>
-<!-- End service Area -->
+
 
 
 <!-- Start faq Area -->
@@ -542,40 +592,5 @@
 </div>	
 </section>
 <!-- end blog Area -->	
-<script>
-    $(document).ready(function(){
-      // Add smooth scrolling to all links in navbar + footer link
-      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-          // Prevent default anchor click behavior
-          event.preventDefault();
-    
-          // Store hash
-          var hash = this.hash;
-    
-          // Using jQuery's animate() method to add smooth page scroll
-          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 900, function(){
-       
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-          });
-        } // End if
-      });
-      
-      $(window).scroll(function() {
-        $(".slideanim").each(function(){
-          var pos = $(this).offset().top;
-    
-          var winTop = $(window).scrollTop();
-            if (pos < winTop + 600) {
-              $(this).addClass("slide");
-            }
-        });
-      });
-    })
-    </script>
+
 @endsection

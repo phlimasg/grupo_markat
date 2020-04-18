@@ -4,6 +4,7 @@
     <!-- Start of HubSpot Embed Code -->
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6256562.js"></script>
     <!-- End of HubSpot Embed Code -->
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145404521-1"></script>
     <script>
@@ -34,34 +35,39 @@
         ============================================= -->
         <link rel="stylesheet" href="{{ url('public/css/linearicons.css') }}">
         <link rel="stylesheet" href="{{ url('public/css/font-awesome.min.css') }}">
-        <link rel="stylesheet" href="public/css/bootstrap.css">
-        <link rel="stylesheet" href="public/css/magnific-popup.css">
-        <link rel="stylesheet" href="public/css/nice-select.css">	
-        <link rel="stylesheet" href="public/css/hexagons.min.css">							
-        <link rel="stylesheet" href="public/css/animate.min.css">
-        <link rel="stylesheet" href="public/css/owl.carousel.css">
-        <link rel="stylesheet" href="public/css/main.css">
+        <link rel="stylesheet" href="{{ url('public/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url('public/css/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ url('public/css/nice-select.css') }}">	
+        <link rel="stylesheet" href="{{ url('public/css/hexagons.min.css') }}">							
+        <link rel="stylesheet" href="{{ url('public/css/animate.min.css') }}">
+        <link rel="stylesheet" href="{{ url('public/css/owl.carousel.css') }}">
+        <link rel="stylesheet" href="{{ url('public/css/main.css') }}">
+        <script src="{{ url('public/js/vendor/jquery-2.2.4.min.js')}}"></script>
+        <script src="{{ url('public/js/vendor/bootstrap.min.js')}}"></script>	
     </head>
-    <body>
+    <body id="mypage">
             <header id="header" id="home">
                     <div class="container main-menu">
                         <div class="row align-items-center justify-content-between d-flex">
                           <div id="logo">
-                            <a href="index.html"><img src="public/img/imperio/logo.png" alt="" title="" /></a>
+                            <a href="{{url('/')}}"><img src="public/img/imperio/logo_.png" alt="" title="" /></a>
                           </div>
                           <nav id="nav-menu-container">
                             <ul class="nav-menu">
                               <li class="menu-active"><a href="{{url('/')}}">Início</a></li>
-                              <li><a href="#about">Sobre</a></li>
                               <li><a href="#products">Produtos</a></li>
+                              <li><a href="#about">Sobre</a></li>
                               <li><a href="#contacts">Contatos</a></li>                              
                             </ul>
                           </nav><!-- #nav-menu-container -->		    		
                         </div>
                     </div>
                     </header><!-- #header -->	
+
+                    
           @yield('content')
             
+
         <!-- start footer Area -->		
         <footer class="footer-area section-gap">
             <div class="container">
@@ -102,7 +108,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                             <p>Nossas redes sociais</p>
                             <div class="footer-social d-flex align-items-center">
                                 <a href="https://facebook.com/telhasimperio"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="https://www.instagram.com/telhas_imperio/"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>							
@@ -111,21 +117,83 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </footer>	
         <!-- End footer Area -->	
 
-        <script src="public/js/vendor/jquery-2.2.4.min.js"></script>
+        		
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="public/js/vendor/bootstrap.min.js"></script>			
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-          <script src="public/js/easing.min.js"></script>			
-        <script src="public/js/hoverIntent.js"></script>
-        <script src="public/js/superfish.min.js"></script>	
-        <script src="public/js/jquery.ajaxchimp.min.js"></script>
-        <script src="public/js/jquery.magnific-popup.min.js"></script>	
-        <script src="public/js/owl.carousel.min.js"></script>	
-        <script src="public/js/hexagons.min.js"></script>							
-        <script src="public/js/jquery.nice-select.min.js"></script>	
-        <script src="public/js/jquery.counterup.min.js"></script>
-        <script src="public/js/waypoints.min.js"></script>							
-        <script src="public/js/mail-script.js"></script>	
-        <script src="public/js/main.js"></script>	
+          <script src="{{ url('public/js/easing.min.js')}}"></script>			
+        <script src="{{ url('public/js/hoverIntent.js')}}"></script>
+        <script src="{{ url('public/js/superfish.min.js')}}"></script>	
+        <script src="{{ url('public/js/jquery.ajaxchimp.min.js')}}"></script>
+        <script src="{{ url('public/js/jquery.magnific-popup.min.js')}}"></script>	
+        <script src="{{ url('public/js/owl.carousel.min.js')}}"></script>	
+        <script src="{{ url('public/js/hexagons.min.js')}}"></script>							
+        <script src="{{ url('public/js/jquery.nice-select.min.js')}}"></script>	
+        <script src="{{ url('public/js/jquery.counterup.min.js')}}"></script>
+        <script src="{{ url('public/js/waypoints.min.js')}}"></script>							
+        <script src="{{ url('public/js/mail-script.js')}}"></script>	
+        <script src="{{ url('public/js/main.js')}}"></script>	
+        <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
+        <script>
+            $('.owl-carousel').owlCarousel({
+                items:4,
+                loop:true,
+                margin:10,
+                autoplay:true,
+                autoplayTimeout:4000,
+                autoplayHoverPause:true,                
+                nav:false,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:1
+                    },
+                    1000:{
+                        items:1
+                    }
+                }
+            })
+        </script>
+
+<script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a,.container a, footer a[href='#myPage']").on('click', function(event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+    
+          // Store hash
+          var hash = this.hash;
+    
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){
+       
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+      
+      $(window).scroll(function() {
+        $(".slideanim").each(function(){
+          var pos = $(this).offset().top;
+    
+          var winTop = $(window).scrollTop();
+            if (pos < winTop + 600) {
+              $(this).addClass("slide");
+            }
+        });
+      });
+    })
+
+
+    
+    </script>
     </body>
 </html>

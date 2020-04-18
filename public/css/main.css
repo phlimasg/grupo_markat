@@ -2283,10 +2283,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .primary-btn span {
   color: #fff;
-  position: absolute;
+  /*position: absolute;*/
   top: 50%;
   transform: translateY(-60%);
-  right: 30px;
+  left: 30px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -2298,8 +2298,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .primary-btn:hover span {
-  color: #fff;
-  right: 20px;
+  color: #fab700;
+  left: 20px;
 }
 
 .primary-btn.white {
@@ -2308,7 +2308,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .primary-btn.white span {
-  color: #fff;
+  color: #fab700;
 }
 
 .primary-btn.white:hover {
@@ -2416,6 +2416,21 @@ body.mobile-nav-active #mobile-nav-toggle {
   border: 1px solid #fff;
   background: transparent;
   color: #fff;
+}
+
+.orcamento-btn {
+  background-color: #fab700;
+  border-radius: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+.orcamento-btn:hover {
+  border: 1px solid #fab700;
+  background: transparent;
+  color: #fab700;
 }
 
 .cat-area #hexagon:hover {
@@ -3511,6 +3526,18 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-weight: 400;
 }
 
+.form-control-cadastro {
+  
+  width: 100% !important;
+  font-weight: 300;
+  background: #fff;
+  color: rgb(66, 66, 66);
+  padding-left: 20px;
+  border-radius: 0;
+  font-size: 14px;
+  padding: 10px 18px;
+}
+
 .commentform-area .primary-btn {
   padding-left: 50px;
   padding-right: 50px;
@@ -3537,3 +3564,8 @@ body.mobile-nav-active #mobile-nav-toggle {
                End Blog Details  Page style
 ################
 */
+
+
+.descricao{
+  margin-top: -25px !important;  
+}
