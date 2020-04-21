@@ -18,8 +18,9 @@ Route::domain('telhasimperio.grupomarkat.com')->group(function () {*/
 
 
 
-Route::get('/', 'Imperio\SiteController@index');
+Route::get('/', 'Imperio\SiteController@index')->name('impoerioHome');
 Route::get('/cadastro', 'Imperio\SiteController@cadastro')->name('cadastro');
+Route::get('/produto/{id}', 'Imperio\SiteController@show')->name('show');
 Route::post('/salvar_cadastro', 'Imperio\SiteController@store')->name('cadastro.store');
 Route::prefix('admin')->group(function () {
     Route::resource('produto_imagens','Imperio\ImagensController');

@@ -16,9 +16,9 @@ class CreateCadastroSitesTable extends Migration
         Schema::create('cadastro_sites', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome')->nullable();
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('telefone')->nullable();
-            $table->string('cep');
+            $table->string('cep')->nullable();
             $table->string('rua')->nullable();
             $table->string('numero')->nullable();
             $table->string('bairro')->nullable();

@@ -17,7 +17,7 @@
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="public/img/fav.png">
+    <link rel="shortcut icon" href="{{ asset('/img/imperio/fav.png') }}">
     <!-- Author Meta -->
     <meta name="author" content="codepixer">
     <!-- Meta Description -->
@@ -50,7 +50,7 @@
                     <div class="container main-menu">
                         <div class="row align-items-center justify-content-between d-flex">
                           <div id="logo">
-                            <a href="{{url('/')}}"><img src="public/img/imperio/logo_.png" alt="" title="" /></a>
+                            <a href="{{url('/')}}"><img src="{{ asset('/img/imperio/logo_.png') }}" alt="" title="" /></a>
                           </div>
                           <nav id="nav-menu-container">
                             <ul class="nav-menu">

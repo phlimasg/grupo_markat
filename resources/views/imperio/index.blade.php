@@ -2,6 +2,33 @@
 @section('content')
 
 
+<!-- Modal -->
+<div id="cadastrado" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="display: unset">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Dados recebidos!</h4>
+        </div>
+        <div class="modal-body">
+        <h4>Oi {{Cookie::get('nome')}},
+        <br><br>
+        Recebemos seus dados com sucesso!
+        <br>
+        Agorá é só adicionar os itens ao seu orçamento. Após finalizado, enviaremos para o email <b>{{Cookie::get('email')}}</b> o valor total do orçamento.</h4>         
+        <p></p>
+        </div>
+        <div class="modal-footer">
+          <a href="#products" class="primary-btn orcamento-btn text-uppercase" onclick="modalClose()">Fazer meu orçamento agora</a>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  <!-- fim modal -->
+
 <!-- start banner Area -->
 <section class="banner-area relative" id="home">
 <div class="overlay overlay-bg"></div>
@@ -39,12 +66,12 @@
             @forelse ($produtos as $produto)
                 @if (!empty($produto->imagem))                    
                     <div class="col-md-2 text-center" style="background-color: rgb(245, 245, 245); padding: 5px; border: 2px solid white">
-                        <a href="#" class="single-service" style="color: inherit">
+                        <a href="{{ route('show', ['id'=>$produto->id]) }}" class="single-service" style="color: inherit">
                             <div id="{{$produto->id}}" class="owl-carousel owl-theme">
                                 <!-- Wrapper for slides -->
                                 @foreach ($produto->imagem as $imagem)
                                       <div class="item">
-                                        <img src="{{url('/public/storage').'/'.$imagem->url}}" alt="" style="max-height: 300px">
+                                        <img src="{{url('/public/storage').'/'.$imagem->url}}" alt="" style="max-height: 300px; max-width: 350px">
                                       </div>  
                                 @endforeach
                             </div> 
@@ -592,5 +619,13 @@
 </div>	
 </section>
 <!-- end blog Area -->	
-
+@if(Cookie::get('modal')==1)    
+    <script>
+        function modalClose() {
+            $("#cadastrado").modal("hide");
+        }
+        $("#cadastrado").modal();        
+    </script>
+    @php(setcookie('modal',0,360))    
+@endif
 @endsection
