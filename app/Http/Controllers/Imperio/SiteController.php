@@ -13,7 +13,7 @@ class SiteController extends Controller
 {
     public function index()
     {
-        $produtos =  produtos::paginate(20);
+        $produtos =  produtos::limit(6)->get();
         
         return view('imperio.index', compact('produtos'));
     }

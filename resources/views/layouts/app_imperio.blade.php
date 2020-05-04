@@ -69,16 +69,16 @@
             
 
         <!-- start footer Area -->		
-        <footer class="footer-area section-gap">
+        <footer class="footer-area section-gap" id="about">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5 col-md-6 col-sm-6">
                         <div class="single-footer-widget">
-                            <h6>About Us</h6>
+                            <h6>Sobre</h6>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
+                              Telhas Império, é uma impresa do Grupo Markat, especializada em telhas termoacústicas, calhas, rufus, instalações, pintura eletrostática e acessórios.
                             </p>
-                            <p class="footer-text">
+                            <p class="footer-text" style="display:none">
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -88,7 +88,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                     <div class="col-lg-5  col-md-6 col-sm-6">
                         <div class="single-footer-widget">
                             <h6>Newsletter</h6>
-                            <p>Stay update with our latest</p>
+                            <p>Receba nossas novidades e promoções</p>
                             <div class="" id="mc_embed_signup">
                                 <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
                                     <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">

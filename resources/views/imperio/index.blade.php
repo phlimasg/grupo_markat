@@ -51,7 +51,7 @@
 
 
 <!-- Start service Area -->
-<section class="service-area section-gap" id="products">
+<section class="home-about-area section-gap" id="products">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-12 pb-30 header-text text-center">
@@ -176,7 +176,7 @@
             </div>												
         </div>
     -->
-    {{ $produtos->links() }}
+    
     </div>	
     </section>
     <!-- End service Area -->
@@ -189,28 +189,33 @@
         <div class="col-lg-4">	
             <div class="single-cat d-flex flex-column">
                 <a href="#" class="hb-sm-margin mx-auto d-block"><span class="hb hb-sm inv hb-facebook-inv"><span class="lnr lnr-magic-wand"></span></span></a>
-                <h4 class="mb-20" style="margin-top: 23px;">Maintenance</h4>
+                <h4 class="mb-20" style="margin-top: 23px;">Aplicações Industriais</h4>
                 <p>
-                    inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.
+                    Cobertura, estruturas e acessórios. 
                 </p>
+                <p>Tudo para montagem e manutenção do seu galpão industrial.</p>
             </div>															
         </div>
         <div class="col-lg-4">	
             <div class="single-cat">
                 <a href="#" class="hb-sm-margin mx-auto d-block"><span class="hb hb-sm inv hb-facebook-inv"><span class="lnr lnr-rocket"></span></span></a>
-                <h4 class="mt-40 mb-20">Residental Service</h4>
+                <h4 class="mt-40 mb-20">Aplicações Residenciais</h4>
                 <p>
-                    inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.
+                    Variedade de cores,
+calhas, rufus e acabamentos. 
                 </p>
+                <p>Sua casa com visual moderno e elegante. 
+                    Mais de 20 opções de cores diferentes.</p>
             </div>															
         </div>
         <div class="col-lg-4">
             <div class="single-cat">
                 <a href="#" class="hb-sm-margin mx-auto d-block"><span class="hb hb-sm inv hb-facebook-inv"><span class="lnr lnr-bug"></span></span></a>
-                <h4 class="mt-40 mb-20">Commercial Service</h4>
+                <h4 class="mt-40 mb-20">Aplicações Prediais</h4>
                 <p>
-                    inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.
+                    Tapumes, estruturas e coberturas.
                 </p>
+                <p>Excelentes soluções para construção civil.</p>
             </div>							
         </div>
     </div>
@@ -220,20 +225,17 @@
 
 
 <!-- Start home-about Area -->
-<section class="home-about-area section-gap" id="about">
+<section class="home-about-area section-gap" id="contacts">
 <div class="container">
     <div class="row justify-content-center align-items-center">
-        <div class="col-lg-8 col-md-12 home-about-left">
-            <h6>Brand new app to blow your mind</h6>
+        <div class="col-lg-8 col-md-12 home-about-left">            
             <h1>
-                We’ve made a life <br>
-                that will change you
+                Precisa de ajuda?
             </h1>
-            <p class="sub">We are here to listen from you deliver exellence</p>
-            <p class="pb-20">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
-            </p>
-            <a class="primary-btn" href="#">Get Started Now</a>
+            <p class="sub">Nós da equipe Telhas Império, estamos sempre a disposição para tirar-mos todas as suas dúvidas.</p>
+            <p class="sub">Entre em contato conosco utlizando o formulário ao lado, ou pelo Whatsapp no botão abaixo.</p>
+            <br><br>
+            <a class="primary-btn" href="#">Contato pelo Whastapp</a>
         </div>
         <div class="col-lg-4 col-md-12 home-about-right relative">
             <form novalidate="" accept-charset="UTF-8"
