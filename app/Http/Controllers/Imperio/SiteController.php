@@ -5,9 +5,13 @@ namespace App\Http\Controllers\Imperio;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CadastroSiteRequest;
+use App\Mail\OrcamentoMail;
 use App\Model\imperio\CadastroSite;
+use App\Model\imperio\iten;
+use App\Model\imperio\orcamento;
 use App\Model\imperio\produtos;
-use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Mail;
 
 class SiteController extends Controller
 {
@@ -16,6 +20,12 @@ class SiteController extends Controller
         $produtos =  produtos::limit(6)->get();
         
         return view('imperio.index', compact('produtos'));
+    }
+    public function produtos()
+    {
+        $produtos =  produtos::paginate(30);
+        
+        return view('imperio.produtos', compact('produtos'));
     }
     public function cadastro()
     {   
@@ -26,15 +36,73 @@ class SiteController extends Controller
         $cadastro = CadastroSite::where('email',$request->email)->first();
         empty($cadastro) 
         ? $cadastro = CadastroSite::create($request->except(['_token'])) 
-        : $cadastro = CadastroSite::where('email',$request->email)->update($request->except(['_token','email']));
-        /*$client = new Client();
-        $response = $client->get('https://geocode.search.hereapi.com/v1/geocode?q=Invalidenstr+117%2C+Berlin&apiKey=Y3eeJPPKY4bz8RFWmDJdg5fS1jxwC0fyQN3rGHFSDuU');
-        dd(json_decode($response->getBody()->getContents()));*/
-        return redirect()->route('impoerioHome')->cookie('email',$request->email, 360)->cookie('nome',$request->nome,360)->cookie('modal',1,360);
+        : CadastroSite::where('email',$request->email)->update($request->except(['_token','email']));       
+        return redirect()->route('produtos')
+        ->cookie('email',$request->email, 360)
+        ->cookie('nome',$request->nome,360)
+        ->cookie('user_id',$cadastro->id)
+        ->cookie('modal',1,360);
     }
     public function show($id)
     {
         $produto = produtos::findOrFail($id);
         return view('imperio.showProduto',compact('produto'));
+    }
+    public function carrinhoStore(Request $request)
+    {        
+        $orcamento_id = $request->orcamento_id;
+        if(empty($request->orcamento_id)){
+            $orcamento = orcamento::create([
+                'cadastro_sites_id'=> $request->user_id,
+                'email_enviado'	=> '0',
+                'email_data_hora'=> '0001-01-01 00:00:00'
+            ]);
+            $orcamento_id = $orcamento->id;
+            $itens = iten::create([
+                'produtos_id' => $request->produto_id,	
+                'orcamentos_id' => $orcamento_id,
+                'quantidade'  => $request->qtd
+            ]);
+            return redirect()->back()
+            ->cookie('orcamento_id',$orcamento_id, 360);
+        }else{
+            $itens = iten::create([
+                'produtos_id' => $request->produto_id,	
+                'orcamentos_id' => $orcamento_id,
+                'quantidade'  => $request->qtd
+            ]);
+            return redirect()->back();
+        }     
+        
+    }
+    public function carrinho($id)
+    {
+        $orcamento = orcamento::where('cadastro_sites_id',Cookie::get('user_id'))->where('id',$id)->first();
+        return view('imperio.carrinho',compact('orcamento'));
+
+    }
+    public function carrinhoUpdate(Request $request)
+    {
+        iten::where('id',$request->item_id)->update([
+            'quantidade' => $request->quantidade
+        ]);
+        return redirect()->back();
+    }
+    public function carrinhoDelete(Request $request)
+    {
+        iten::where('id',$request->item_id)->delete();
+        return redirect()->back();
+    }
+    public function carrinhoFinalizar(Request $request)
+    {
+        $orcamento = orcamento::find($request->orcamento_id);
+        Mail::to('raphael.oliveira@lasalle.org.br')
+        ->bcc('raphaelpc_@hotmail.com')        
+        ->send(new OrcamentoMail($orcamento));
+        $orcamento->update([
+            'email_enviado' => 1,
+            'email_data_hora' => date('Y-m-d H:i:s'),
+        ]);
+        return redirect()->back();
     }
 }

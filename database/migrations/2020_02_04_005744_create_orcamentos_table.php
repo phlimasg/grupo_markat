@@ -15,10 +15,10 @@ class CreateOrcamentosTable extends Migration
     {
         Schema::create('orcamentos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('contatos_id')->nullable();
+            $table->unsignedBigInteger('cadastro_sites_id')->nullable();
             $table->string('email_enviado');            
             $table->dateTime('email_data_hora');
-            $table->foreign('contatos_id')->references('id')->on('contatos')->onDelete('cascade');
+            $table->foreign('cadastro_sites_id')->references('id')->on('cadastro_sites')->onDelete('cascade');
             $table->timestamps();
         });
     }

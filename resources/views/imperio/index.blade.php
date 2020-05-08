@@ -2,32 +2,7 @@
 @section('content')
 
 
-<!-- Modal -->
-<div id="cadastrado" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-lg">
-  
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" style="display: unset">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Dados recebidos!</h4>
-        </div>
-        <div class="modal-body">
-        <h4>Oi {{Cookie::get('nome')}},
-        <br><br>
-        Recebemos seus dados com sucesso!
-        <br>
-        Agorá é só adicionar os itens ao seu orçamento. Após finalizado, enviaremos para o email <b>{{Cookie::get('email')}}</b> o valor total do orçamento.</h4>         
-        <p></p>
-        </div>
-        <div class="modal-footer">
-          <a href="#products" class="primary-btn orcamento-btn text-uppercase" onclick="modalClose()">Fazer meu orçamento agora</a>
-        </div>
-      </div>
-  
-    </div>
-  </div>
-  <!-- fim modal -->
+
 
 <!-- start banner Area -->
 <section class="banner-area relative" id="home">
@@ -42,7 +17,7 @@
             <p class="text-white">
                 Especializados em telhas galvalumes, temos o melhor material termoacústico do mercado.
             </p>
-            <a href="#products" class="primary-btn header-btn text-uppercase">Faça seu orçamento agora!</a>
+            <a href="{{ route('produtos') }}" class="primary-btn header-btn text-uppercase">Faça seu orçamento agora!</a>
         </div>												
     </div>
 </div>
@@ -621,13 +596,29 @@ calhas, rufus e acabamentos.
 </div>	
 </section>
 <!-- end blog Area -->	
-@if(Cookie::get('modal')==1)    
-    <script>
-        function modalClose() {
-            $("#cadastrado").modal("hide");
+
+@endsection
+@section('script')
+<script>
+    $('.owl-carousel').owlCarousel({
+        items:4,
+        loop:true,
+        margin:10,
+        autoplay:true,
+        autoplayTimeout:4000,
+        autoplayHoverPause:true,                
+        nav:false,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
         }
-        $("#cadastrado").modal();        
-    </script>
-    @php(setcookie('modal',0,360))    
-@endif
+    })
+</script>
 @endsection

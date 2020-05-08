@@ -24,15 +24,15 @@ class CadastroSiteRequest extends FormRequest
     public function rules()
     {
         return [
-            "nome" => "nullable",
+            "nome" => "nullable|string",
             "email" => "required|email",
-            "telefone" => "nullable",
+            "telefone" => "nullable|string",
             "cep" => "required|string",
-            "rua" => "nullable",
-            "numero" => "nullable",
-            "bairro" => "nullable",
-            "cidade" => "nullable",
-            "uf" => "nullable",
+            "rua" => "nullable|string",
+            "numero" => "nullable|numeric",
+            "bairro" => "nullable|string",
+            "cidade" => "nullable|string",
+            "uf" => "nullable|string",
         ];
     }
 }

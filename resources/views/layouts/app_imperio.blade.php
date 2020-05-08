@@ -55,7 +55,7 @@
                           <nav id="nav-menu-container">
                             <ul class="nav-menu">
                               <li class="menu-active"><a href="{{url('/')}}">Início</a></li>
-                              <li><a href="#products">Produtos</a></li>
+                              <li><a href="{{ route('produtos') }}">Produtos</a></li>
                               <li><a href="#about">Sobre</a></li>
                               <li><a href="#contacts">Contatos</a></li>                              
                             </ul>
@@ -119,7 +119,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
         		
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+        
           <script src="{{ url('public/js/easing.min.js')}}"></script>			
         <script src="{{ url('public/js/hoverIntent.js')}}"></script>
         <script src="{{ url('public/js/superfish.min.js')}}"></script>	
@@ -133,28 +133,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="{{ url('public/js/mail-script.js')}}"></script>	
         <script src="{{ url('public/js/main.js')}}"></script>	
         <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
-        <script>
-            $('.owl-carousel').owlCarousel({
-                items:4,
-                loop:true,
-                margin:10,
-                autoplay:true,
-                autoplayTimeout:4000,
-                autoplayHoverPause:true,                
-                nav:false,
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    600:{
-                        items:1
-                    },
-                    1000:{
-                        items:1
-                    }
-                }
-            })
-        </script>
+        @yield('script')
+        
 
 <script>
     $(document).ready(function(){
