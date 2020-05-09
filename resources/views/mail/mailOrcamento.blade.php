@@ -1,7 +1,8 @@
 <div style="width: 100%; margin: 0 auto; max-width: 600px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 1.1em">
-    <div style="background-color: lightgray; text-align: center;">
+    <div style="text-align: center; box-shadow: 0px 10px 10px grey;">
         <img src="http://telhasimperio.grupomarkat.com/public/img/imperio/logo_.png" alt="" style="margin-top: 15px; margin-bottom: 15px; ">
     </div>
+    <hr>
     <h3>Olá {{$orcamento->user->nome}},</h3> <br>
     <p>Com muita felicidade recebemos o seu orçamento e responderemos o mais breve possível.</p>
     <p>Qualquer dúvida, entre em contato conosco pelo whatsapp clicando no botão abaixo.</p>
@@ -35,9 +36,8 @@
         </table>
     </div>
     <div style="float: right;">
-        <p>Atenciosamente,</p>
-        <br>
-        <p><b>Equipe Telhas Império</b></p>
+        <p>Atenciosamente,</p>        
+        <p><b>Equipe Telhas Império.</b></p>
     </div>
 
 </div>

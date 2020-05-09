@@ -36,11 +36,14 @@
                 @endif
             </div>
             <div class="col-md-3">
-                <a href="{{ route('carrinho', ['id'=>Cookie::get('orcamento_id')]) }}" class="orcamento-btn primary-btn text-uppercase btn-block" style="font-size: 1 em"><span class="lnr lnr-cart"></span> Finalizar orçamento 
-                    <span class="badge">
-                        {{\App\Model\imperio\iten::where('orcamentos_id',Cookie::get('orcamento_id'))
-                        ->count()}}
-                    </span></a>
+            @if (\App\Model\imperio\iten::where('orcamentos_id',Cookie::get('orcamento_id'))
+            ->count() > 0)
+                    <a href="{{ route('carrinho', ['id'=>Cookie::get('orcamento_id')]) }}" class="orcamento-btn primary-btn text-uppercase btn-block" style="font-size: 1 em"><span class="lnr lnr-cart"></span> Finalizar orçamento 
+                        <span class="badge">
+                            {{\App\Model\imperio\iten::where('orcamentos_id',Cookie::get('orcamento_id'))
+                            ->count()}}
+                        </span></a>
+                @endif
             </div>
         </div>
         <div class="row">

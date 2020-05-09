@@ -38,10 +38,10 @@ class SiteController extends Controller
         ? $cadastro = CadastroSite::create($request->except(['_token'])) 
         : CadastroSite::where('email',$request->email)->update($request->except(['_token','email']));       
         return redirect()->route('produtos')
-        ->cookie('email',$request->email, 360)
-        ->cookie('nome',$request->nome,360)
+        ->cookie('email',$request->email, 3600)
+        ->cookie('nome',$request->nome,3600)
         ->cookie('user_id',$cadastro->id)
-        ->cookie('modal',1,360);
+        ->cookie('modal',1,3600);
     }
     public function show($id)
     {
@@ -64,7 +64,7 @@ class SiteController extends Controller
                 'quantidade'  => $request->qtd
             ]);
             return redirect()->back()
-            ->cookie('orcamento_id',$orcamento_id, 360);
+            ->cookie('orcamento_id',$orcamento_id, 3600);
         }else{
             $itens = iten::create([
                 'produtos_id' => $request->produto_id,	
@@ -103,6 +103,7 @@ class SiteController extends Controller
             'email_enviado' => 1,
             'email_data_hora' => date('Y-m-d H:i:s'),
         ]);
-        return redirect()->back();
+        
+        return redirect()->route('carrinhoFinalizar')->cookie('orcamento_id','', time() - 3600);
     }
 }

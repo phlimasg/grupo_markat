@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx" class="no-js">
 <head>
-    <!-- Start of HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6256562.js"></script>
-    <!-- End of HubSpot Embed Code -->
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145404521-1"></script>
     <script>

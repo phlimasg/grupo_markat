@@ -51,7 +51,7 @@
         <input type="hidden" name="orcamento_id" value="{{Cookie::get('orcamento_id')}}">
             <div class="row">
                 <div class="offset-9 col-sm-3 ">
-                    <button href="" class="btn primary-btn btn-block orcamento-btn" style="">finalizar orçamento</button>
+                    <button href="" class="btn primary-btn btn-block orcamento-btn text-upper" style="">FINALIZAR ORÇAMENTO</button>
                 </div>
             </div>
         </form>
