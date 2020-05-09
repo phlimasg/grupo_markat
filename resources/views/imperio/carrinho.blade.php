@@ -46,7 +46,7 @@
               </tbody>
             </table>
         </div>
-        <form action="{{ route('carrinhoFinalizar', ['id'=>1]) }}" method="POST">
+        <form action="{{ route('carrinhoFinalizar') }}" method="POST">
             @csrf
         <input type="hidden" name="orcamento_id" value="{{Cookie::get('orcamento_id')}}">
             <div class="row">

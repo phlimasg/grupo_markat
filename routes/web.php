@@ -28,7 +28,7 @@ Route::post('/carrinhoDelete', 'Imperio\SiteController@carrinhoDelete')->name('c
 Route::post('/carrinhoFinalizar', 'Imperio\SiteController@carrinhoFinalizar')->name('carrinhoFinalizar');
 Route::get('/concluido', function(){
     return view('imperio.carrinhoFinal');
-})->name('carrinhoFinalizar');
+})->name('carrinhoFinal');
 Route::get('/produto/{id}', 'Imperio\SiteController@show')->name('show');
 Route::post('/salvar_cadastro', 'Imperio\SiteController@store')->name('cadastro.store');
 Route::prefix('admin')->group(function () {

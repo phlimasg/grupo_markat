@@ -104,6 +104,6 @@ class SiteController extends Controller
             'email_data_hora' => date('Y-m-d H:i:s'),
         ]);
         
-        return redirect()->route('carrinhoFinalizar')->cookie('orcamento_id','', time() - 3600);
+        return redirect()->route('carrinhoFinal')->cookie('orcamento_id','', time() - 3600);
     }
 }
