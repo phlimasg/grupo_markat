@@ -95,9 +95,10 @@ class SiteController extends Controller
     }
     public function carrinhoFinalizar(Request $request)
     {
-        $orcamento = orcamento::find($request->orcamento_id);
-        Mail::to('raphael.oliveira@lasalle.org.br')
-        ->bcc('raphaelpc_@hotmail.com')        
+        $orcamento = orcamento::find($request->orcamento_id);        
+        Mail::to($orcamento->user->email)
+        ->bcc('contato@telhasimperio.com')        
+        //->bcc('vendas@telhasimperio.com')
         ->send(new OrcamentoMail($orcamento));
         $orcamento->update([
             'email_enviado' => 1,

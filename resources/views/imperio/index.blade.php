@@ -210,7 +210,7 @@ calhas, rufus e acabamentos.
             <p class="sub">Nós da equipe Telhas Império, estamos sempre a disposição para tirar-mos todas as suas dúvidas.</p>
             <p class="sub">Entre em contato conosco utlizando o formulário ao lado, ou pelo Whatsapp no botão abaixo.</p>
             <br><br>
-            <a class="primary-btn" href="#">Contato pelo Whastapp</a>
+            <a class="primary-btn" href="http://wa.me/5521999548784">Contato pelo Whastapp</a>
         </div>
         <div class="col-lg-4 col-md-12 home-about-right relative">
             <form novalidate="" accept-charset="UTF-8"
