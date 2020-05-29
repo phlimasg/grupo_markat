@@ -48,7 +48,9 @@
         <link rel="stylesheet" href="{{ url('public/css/owl.carousel.css') }}">
         <link rel="stylesheet" href="{{ url('public/css/main.css') }}">
         <script src="{{ url('public/js/vendor/jquery-2.2.4.min.js')}}"></script>
-        <script src="{{ url('public/js/vendor/bootstrap.min.js')}}"></script>	
+        <script src="{{ url('public/js/vendor/bootstrap.min.js')}}"></script>
+        <script type="text/javascript" async src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/239851a1-cf1d-4679-9aac-9966da7a8198-loader.js" ></script>
+	
     </head>
     <body id="mypage">
       <!-- Google Tag Manager (noscript) -->
