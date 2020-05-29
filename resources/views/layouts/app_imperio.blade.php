@@ -17,13 +17,11 @@
     <!-- Favicon-->
     <link rel="shortcut icon" href="{{ asset('/img/imperio/fav.png') }}">
     <!-- Author Meta -->
-    <meta name="author" content="codepixer">
-    <!-- Meta Description -->
-    <meta name="description" content="">
-    <!-- Meta Keyword -->
-    <meta name="keywords" content="">
+    <meta name="author" content="Raphael Lima">    
     <!-- meta character set -->
     <meta charset="UTF-8">
+    <meta name="description" content="Telhas Império - Tudo para o seu telhado! Compre telhas térmicas e termoacústicas em qualquer quantidade e com menor preço.">
+    <meta name="keywords" content="telhas, telhados, telhas galvanizadas, calhas, Telhas Império, chapas, alumínio, fabrica de telhas, telhas sanduiche, telhas para cobertura, telhas de galvalume, telhas galvanizadas, telhas termoacústicas preço, calha de zinco preço, preço de telhas galvanizadas, telha galvanizada com isopor, telhas termicas, chapa para portão, telhas termo-acústica, telhas pvc, preço de calhas, telhados zinco, parafusos para telhas, telhas de zinco, aplicações prediais, aplicações industriais, aplicações residenciais">
     <!-- Site Title -->
     <title>Telhas Império</title>
 
