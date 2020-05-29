@@ -95,7 +95,8 @@ class SiteController extends Controller
     }
     public function carrinhoFinalizar(Request $request)
     {
-        $orcamento = orcamento::find($request->orcamento_id);        
+        try {
+            $orcamento = orcamento::find($request->orcamento_id);        
         Mail::to($orcamento->user->email)
         ->bcc('contato@telhasimperio.com')        
         //->bcc('vendas@telhasimperio.com')
@@ -106,5 +107,9 @@ class SiteController extends Controller
         ]);
         
         return redirect()->route('carrinhoFinal')->cookie('orcamento_id','', time() - 3600);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+        
     }
 }
