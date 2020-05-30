@@ -85,6 +85,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                     </div>
                     <div class="col-lg-5  col-md-6 col-sm-6">
                         <div class="single-footer-widget">
+                          <h6>Endereço</h6>
+                            <p>Av. Padre Viêira, 1801 - Jardim Catarina, São Gonçalo - RJ, 24715-160</p>                            
+                          <!--
                             <h6>Newsletter</h6>
                             <p>Receba nossas novidades e promoções</p>
                             <div class="" id="mc_embed_signup">
@@ -97,7 +100,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
                                     <div class="info"></div>
                                 </form>
-                            </div>
+                            </div>-->
                         </div>
                     </div>						
                     <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
