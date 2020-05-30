@@ -51,7 +51,7 @@
         <input type="hidden" name="orcamento_id" value="{{Cookie::get('orcamento_id')}}">
             <div class="row">
                 <div class="offset-9 col-sm-3 ">
-                    <button href="" class="btn primary-btn btn-block orcamento-btn text-upper" style="">FINALIZAR ORÇAMENTO</button>
+                    <button type="submit" id="finalizar" class="btn primary-btn btn-block orcamento-btn text-upper" style="">FINALIZAR ORÇAMENTO</button>
                 </div>
             </div>
         </form>
@@ -59,5 +59,13 @@
         
     </div>
 </section>
+<script>
+    $("#finalizar").click(()=>{
+        setTimeout(() => {
+            $("#finalizar").prop("disabled",true);
+        }, 500);
+    });
+    
+</script>
 @endsection
 
