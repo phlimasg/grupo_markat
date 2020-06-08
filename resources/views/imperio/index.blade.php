@@ -50,13 +50,9 @@
                                       </div>  
                                 @endforeach
                             </div> 
-                            <h4>{{$produto->nome}}</h4>
-                            <div class="descricao">
-                                <p>
-                                    {{Strip_tags(mb_strimwidth($produto->descricao,0,25,'...'))}}
-                                </p>
-
-                            </div>
+                            <div style="min-height: 50px">
+                            <h4>{{$produto->nome}}</h4>    
+                            </div>                        
                         </a>                        
                         @if (Cookie::get('email'))
                             <button type="submit" class="primary-btn orcamento-btn text-uppercase"> <span class="lnr lnr-cart"></span> Adicionar</button>
