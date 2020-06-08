@@ -60,7 +60,7 @@
                                       </div>  
                                 @endforeach                                
                             </div>
-                            <div style="min-height: 100px">
+                            <div style="min-height: 110px">
                                 <h4>{{$produto->nome}}</h4>                            
                             </div> 
                         </a>                        
