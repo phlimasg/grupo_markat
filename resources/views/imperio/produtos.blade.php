@@ -59,14 +59,10 @@
                                         <img src="{{url('/public/storage').'/'.$imagem->url}}" alt="" style="max-height: 300px; max-width: 350px">
                                       </div>  
                                 @endforeach                                
-                            </div> 
-                            <h4>{{$produto->nome}}</h4>
-                            <div class="descricao">
-                                <p>
-                                    {{Strip_tags(mb_strimwidth($produto->descricao,0,25,'...'))}}
-                                </p>
-
                             </div>
+                            <div style="min-height: 100px">
+                                <h4>{{$produto->nome}}</h4>                            
+                            </div> 
                         </a>                        
                         @if (Cookie::get('email'))
                             <a href="#" class="orcamento-btn primary-btn text-uppercase btn-block" data-toggle="modal" data-target="#produto_{{$produto->id}}"><span class="lnr lnr-cart"></span> Adicionar</a>
