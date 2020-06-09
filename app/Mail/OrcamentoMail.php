@@ -29,6 +29,6 @@ class OrcamentoMail extends Mailable
     public function build()
     {
         $orcamento = $this->orcamento;
-        return $this->view('mail.mailOrcamento', compact('orcamento'))->subject('Segue a cópia do seu orçamento')->replyTo('contato@telhasimperio.com');
+        return $this->view('mail.mailOrcamento', compact('orcamento'))->subject('Segue a cópia do seu orçamento')->replyTo('contatos@telhasimperio.com');
     }
 }

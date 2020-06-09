@@ -98,7 +98,7 @@ class SiteController extends Controller
         try {
             $orcamento = orcamento::find($request->orcamento_id);        
         Mail::to($orcamento->user->email)
-        ->bcc('contato@telhasimperio.com')        
+        ->bcc('contatos@telhasimperio.com')        
         //->bcc('vendas@telhasimperio.com')
         ->send(new OrcamentoMail($orcamento));
         $orcamento->update([

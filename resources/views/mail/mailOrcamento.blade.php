@@ -11,8 +11,10 @@
         <img src="https://3.bp.blogspot.com/-T05PTLsSZMA/Wp27wFI50GI/AAAAAAAAARM/VmEM4CmZ1nMdVVM64-Zwb7KEEa00SG-TwCLcBGAs/s1600/marido-de-aluguel-whatsapp-1024x412.png" alt="Atendimento via WhatsApp"
         width="60%"></a>
 
-    </div>
+    </div>    
     <p>Abaixo, uma cópia do que foi solicitado:</p>
+    <p><strong>Endereço:</strong> {{$orcamento->user->rua}}, {{$orcamento->user->numero}}, {{$orcamento->user->bairro}}, {{$orcamento->user->cidade}} - {{$orcamento->user->uf}}</p>
+    <p><strong>Telefone:</strong> {{$orcamento->user->telefone}}</p>
     <div style="width: 100%">          
         <table >
           <thead>
